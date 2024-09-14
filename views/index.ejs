@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo app</title>
+    <style>
+      body {
+        font-family: Syne, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        color: black;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      input {
+        padding: 10px;
+        margin: 10px;
+        width: 200px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+      }
+      li {
+        padding: 10px;
+        margin: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Todo app</h1>
+      <form action="/add/todo" method="post">
+        <input type="text" name="todo" placeholder="Enter your todo" />
+        <input type="submit" value="Add Todo" />
+      </form>
+
+      <ul>
+        <% todo.forEach(todos => { %>
+        <li><%= todos.todo %></li>
+        <%}) %>
+      </ul>
+    </div>
+  </body>
+</html>
